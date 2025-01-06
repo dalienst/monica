@@ -8,7 +8,7 @@ function Contact() {
     <section className="py-5 bg-white" id="contact">
       <div className="container">
         <div className="row">
-          <div className="col-md-6 col-sm-12">
+          <div className="col-md-6 col-sm-12 mb-3">
             <h5 className="fw-bold text-uppercase about-heading">FAQ</h5>
             <h2>Frequently Asked Questions</h2>
             <hr className="about-hr w-25 border-5" />
@@ -42,7 +42,7 @@ function Contact() {
             </div>
           </div>
 
-          <div className="col-md-6 col-sm-12">
+          <div className="col-md-6 col-sm-12 mb-3">
             <h5 className="fw-bold text-uppercase about-heading">Contact Us</h5>
             <h2>How to Contact Us</h2>
             <hr className="about-hr w-25 border-5" />
