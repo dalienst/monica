@@ -20,9 +20,7 @@ function RootLayout({ children }) {
       </head>
       <body>
         <Toaster position="top-center" />
-        <NextAuthProvider>
-          <TanstackQueryProvider>{children}</TanstackQueryProvider>
-        </NextAuthProvider>
+        <TanstackQueryProvider>{children}</TanstackQueryProvider>
         <BootstrapClient />
       </body>
     </html>

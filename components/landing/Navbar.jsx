@@ -13,7 +13,7 @@ export default function Navbar() {
         </Link>
 
         <button
-          className="navbar-toggler border-0  text-dark"
+          className="navbar-toggler border-0"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapsibleNavbar"
@@ -26,7 +26,7 @@ export default function Navbar() {
           className="collapse navbar-collapse justify-content-end"
           id="collapsibleNavbar"
         >
-          <ul className="navbar-nav text-uppercase">
+          <ul className="navbar-nav">
             <li className="nav-item">
               <Link
                 href="/"
