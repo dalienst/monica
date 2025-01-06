@@ -1,5 +1,6 @@
 "use client";
-import { faq } from "@/data/contact";
+import { contacts, faq } from "@/data/contact";
+import Link from "next/link";
 import React from "react";
 
 function Contact() {
@@ -39,6 +40,24 @@ function Contact() {
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="col-md-6 col-sm-12">
+            <h5 className="fw-bold text-uppercase about-heading">Contact Us</h5>
+            <h2>How to Contact Us</h2>
+            <hr className="about-hr w-25 border-5" />
+
+            {contacts?.map((contact) => (
+              <div key={contact?.id} className="contact-item mb-3">
+                <Link
+                  href={contact?.link}
+                  className="d-flex align-items-center text-decoration-none"
+                >
+                  {contact?.icon}
+                  <span>{contact?.title}</span>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -220,3 +220,44 @@ body {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
+/* contacts */
+/* Contact item container */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border: 1px solid var(--primaryShadow);
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: var(--secondaryBg);
+}
+
+.contact-item:hover {
+  background-color: var(--forestGreen);
+  color: var(--secondaryColor);
+  transform: translateY(-3px);
+}
+
+/* Icon styling */
+.contact-item i {
+  font-size: 1.5rem;
+  color: var(--forestGreen);
+}
+
+.contact-item:hover i {
+  color: var(--secondaryColor);
+}
+
+/* Title text */
+.contact-item a {
+  text-decoration: none;
+  color: var(--charcoalGrey);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.contact-item:hover a {
+  color: var(--secondaryColor);
+}

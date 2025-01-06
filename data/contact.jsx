@@ -28,31 +28,31 @@ const contacts = [
     id: 1,
     title: "monicasafaris@gmail.com",
     link: "mailto:monicasafaris@gmail.com",
-    icon: <i className="bi bi-envelope"></i>,
+    icon: <i className="bi bi-envelope me-2"></i>,
   },
   {
     id: 2,
     title: "+1 (123) 456-7890",
     link: "tel:+1 (123) 456-7890",
-    icon: <i className="bi bi-telephone"></i>,
+    icon: <i className="bi bi-telephone me-2"></i>,
   },
   {
     id: 3,
     title: "123 Main Street, City, Country",
     link: "https://www.google.com/maps",
-    icon: <i className="bi bi-geo-alt"></i>,
+    icon: <i className="bi bi-geo-alt me-2"></i>,
   },
   {
     id: 4,
     title: "@monicasafaris",
     link: "https://twitter.com/monicasafaris",
-    icon: <i className="bi bi-twitter"></i>,
+    icon: <i className="bi bi-twitter me-2"></i>,
   },
   {
     id: 5,
     title: "@monicasafaris",
     link: "https://www.instagram.com/monicasafaris",
-    icon: <i className="bi bi-instagram"></i>,
+    icon: <i className="bi bi-instagram me-2"></i>,
   },
 ];
 

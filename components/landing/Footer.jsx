@@ -55,7 +55,15 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <p className="text-light small">Copyright &copy; 2025 Monica Tours & Safaris</p>
+        <hr />
+        <div className="row">
+          <p className="text-light small col-md-6 col-sm-12">
+            Copyright &copy; 2025 Monica Tours & Safaris
+          </p>
+          <p className="text-light small col-md-6 col-sm-12 text-md-end">
+            Powered by Corban Technologies
+          </p>
+        </div>
       </section>
     </div>
   );
