@@ -1,3 +1,5 @@
+"use client";
+import Link from "next/link";
 import React from "react";
 
 const whyUs = [
@@ -50,6 +52,9 @@ function About() {
             adventure or relaxation, we offer personalized tours designed to
             provide you with the ultimate experience in the wild.
           </p>
+          <Link href="/" className="btn action-btn">
+            Explore Tours
+          </Link>
         </div>
       </div>
     </section>

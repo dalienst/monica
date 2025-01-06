@@ -25,6 +25,18 @@ body {
   color: var(--primaryColor);
 }
 
+.action-btn {
+  background-color: var(--forestGreen);
+  color: var(--secondaryColor);
+  border: none;
+}
+
+.action-btn:hover {
+  background-color: var(--sunsetOrange);
+  color: var(--primaryColor);
+}
+
+/* header */
 .header-bg {
   background-image: url("/banner.jpg");
   height: 50vh;
@@ -128,6 +140,20 @@ body {
 }
 
 /* About section */
+.about-heading {
+  color: #b37704;
+  font-size: 18px;
+}
+
+.about-hr {
+  border-color: #f4a261;
+}
+
 .about-card {
   background-color: var(--secondaryBg);
+}
+
+.about-card i {
+  font-size: 1.5rem;
+  color: var(--forestGreen);
 }
