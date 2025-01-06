@@ -28,13 +28,20 @@ export default function Navbar() {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link
-                href="/"
-                className={`${
-                  pathname === "/" ? "nav-link nav-active" : "nav-link"
-                }`}
-              >
+              <Link href="/" className="nav-link">
                 Home
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link href="/#about-us" className="nav-link">
+                About Us
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link href="/#contact" className="nav-link">
+                Contact
               </Link>
             </li>
           </ul>

@@ -4,7 +4,7 @@ import React from "react";
 
 function Header() {
   return (
-    <div className="container-fluid header-bg mb-3 d-flex flex-column align-items-center justify-content-center text-center mx-auto">
+    <div className="container-fluid header-bg d-flex flex-column align-items-center justify-content-center text-center mx-auto">
       <div>
         <h1>Explore the Wild Like Never Before!</h1>
       </div>
