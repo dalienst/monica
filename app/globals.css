@@ -43,6 +43,28 @@ body {
   padding: 2rem;
 }
 
+/* Add an overlay for image opacity */
+.header-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  /* Darken the image with black overlay */
+  z-index: 1;
+  /* Position overlay behind text */
+}
+
+.header-bg h1,
+.header-bg h6,
+.header-bg a {
+  position: relative;
+  /* Ensure text appears above overlay */
+  z-index: 2;
+}
+
 .header-bg h1 {
   font-size: 3rem;
   font-weight: bold;
