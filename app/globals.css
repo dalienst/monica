@@ -208,3 +208,15 @@ body {
     margin: 0 auto;
   }
 }
+
+/* Footer */
+.footer {
+  background-color: #b37704;
+  color: #fff;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
