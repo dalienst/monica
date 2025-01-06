@@ -1,42 +1,263 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --primaryBg: #f9f9f9;
+  --secondaryBg: #fff;
+  --primaryColor: #000;
+  --secondaryColor: #fff;
+  --charcoalGrey: #333;
+  --primaryShadow: rgba(0, 0, 0, 0.1);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Web colors */
+  --forestGreen: #2e8b57;
+  --goldenSand: #f4a261;
+  --sunsetOrange: #ff4500;
+  --balloonRed: #aa2909;
+  --balloonOrange: #b37704;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-a {
-  color: inherit;
+body {
+  background-color: var(--primaryBg);
+  color: var(--primaryColor);
+}
+
+.action-btn {
+  background-color: var(--forestGreen);
+  color: var(--secondaryColor);
+  border: none;
+}
+
+.action-btn:hover {
+  background-color: var(--sunsetOrange);
+  color: var(--primaryColor);
+}
+
+/* header */
+.header-bg {
+  background-image: url("/banner.jpg");
+  height: 50vh;
+  object-fit: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: var(--secondaryColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Add an overlay for image opacity */
+.header-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  /* Darken the image with black overlay */
+  z-index: 1;
+  /* Position overlay behind text */
+}
+
+.header-bg h1,
+.header-bg h6,
+.header-bg a {
+  position: relative;
+  /* Ensure text appears above overlay */
+  z-index: 2;
+}
+
+.header-bg h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--secondaryColor);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1rem;
+}
+
+.header-bg h6 {
+  font-size: 1.2rem;
+  color: var(--secondaryColor);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.header-bg a {
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  margin: 0.5rem;
+  border-radius: 50px;
   text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.header-bg a.btn-primary {
+  background-color: var(--forestGreen);
+  color: var(--secondaryColor);
+  border: none;
+}
+
+.header-bg a.btn-primary:hover {
+  background-color: var(--sunsetOrange);
+  color: var(--primaryColor);
+}
+
+.header-bg a.btn-secondary {
+  background-color: var(--goldenSand);
+  color: var(--primaryColor);
+  border: none;
+}
+
+.header-bg a.btn-secondary:hover {
+  background-color: var(--balloonOrange);
+  color: var(--primaryColor);
+}
+
+@media (max-width: 768px) {
+  .header-bg h1 {
+    font-size: 2rem;
   }
+
+  .header-bg h6 {
+    font-size: 1rem;
+  }
+
+  .header-bg a {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* About section */
+.about-heading {
+  color: #b37704;
+  font-size: 18px;
+}
+
+.about-hr {
+  border-color: #f4a261;
+}
+
+.about-card {
+  background-color: var(--secondaryBg);
+}
+
+.about-card i {
+  font-size: 1.5rem;
+  color: var(--forestGreen);
+}
+
+/* Excursions */
+
+
+/* Card styling */
+.exc-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exc-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling */
+.card-img-top {
+  border-bottom: 3px solid var(--forestGreen);
+  /* Add color to the bottom border */
+  height: 200px;
+  /* Consistent height */
+  object-fit: cover;
+  /* Make sure images fit the area */
+}
+
+/* Card title */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--charcoalGrey);
+  margin: 1rem 0 0.5rem;
+  text-align: center;
+}
+
+/* Pricing section */
+.card-pricing {
+  font-size: 1rem;
+  color: var(--forestGreen);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    margin: 0 auto;
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #b37704;
+  color: #fff;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* contacts */
+/* Contact item container */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border: 1px solid var(--primaryShadow);
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: var(--secondaryBg);
+}
+
+.contact-item:hover {
+  background-color: var(--forestGreen);
+  color: var(--secondaryColor);
+  transform: translateY(-3px);
+}
+
+/* Icon styling */
+.contact-item i {
+  font-size: 1.5rem;
+  color: var(--forestGreen);
+}
+
+.contact-item:hover i {
+  color: var(--secondaryColor);
+}
+
+/* Title text */
+.contact-item a {
+  text-decoration: none;
+  color: var(--charcoalGrey);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.contact-item:hover a {
+  color: var(--secondaryColor);
 }

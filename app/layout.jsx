@@ -1,10 +1,9 @@
 "use client";
-import BootstrapClient from "@/providers/BootstrapClient";
-import NextAuthProvider from "@/providers/NextAuthProvider";
-import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
-import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import BootstrapClient from "@/providers/BootstrapClient";
+import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
+import React from "react";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
@@ -20,9 +19,7 @@ function RootLayout({ children }) {
       </head>
       <body>
         <Toaster position="top-center" />
-        <NextAuthProvider>
-          <TanstackQueryProvider>{children}</TanstackQueryProvider>
-        </NextAuthProvider>
+        <TanstackQueryProvider>{children}</TanstackQueryProvider>
         <BootstrapClient />
       </body>
     </html>
