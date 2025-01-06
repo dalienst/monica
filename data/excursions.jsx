@@ -2,7 +2,7 @@ const topExcursions = [
   {
     id: 1,
     title: "1 Day Tsavo East",
-    image: "./tsavo.jpg",
+    image: "/herd.jpg",
     pound: "£ 180",
     dollar: "$ 220",
     euro: "€ 170",
@@ -10,7 +10,7 @@ const topExcursions = [
   {
     id: 2,
     title: "1 Day Tsavo East",
-    image: "./tsavo.jpg",
+    image: "/buffallo.jpg",
     pound: "£ 180",
     dollar: "$ 220",
     euro: "€ 170",
@@ -18,7 +18,7 @@ const topExcursions = [
   {
     id: 3,
     title: "1 Day Tsavo East",
-    image: "./tsavo.jpg",
+    image: "/ele.jpg",
     pound: "£ 180",
     dollar: "$ 220",
     euro: "€ 170",
@@ -26,7 +26,7 @@ const topExcursions = [
   {
     id: 4,
     title: "1 Day Tsavo East",
-    image: "./tsavo.jpg",
+    image: "/serengeti.jpg",
     pound: "£ 180",
     dollar: "$ 220",
     euro: "€ 170",
@@ -34,7 +34,7 @@ const topExcursions = [
   {
     id: 5,
     title: "1 Day Tsavo East",
-    image: "./tsavo.jpg",
+    image: "/tsavo.jpg",
     pound: "£ 180",
     dollar: "$ 220",
     euro: "€ 170",
@@ -42,7 +42,7 @@ const topExcursions = [
   {
     id: 6,
     title: "1 Day Tsavo East",
-    image: "./tsavo.jpg",
+    image: "/lion.jpg",
     pound: "£ 180",
     dollar: "$ 220",
     euro: "€ 170",
