@@ -14,11 +14,11 @@ function Excursions() {
         <hr className="about-hr w-25 m-auto border-5" />
       </div>
 
-      <section className="container mt-3">
+      <section className="container py-5">
         <div className="row">
           {topExcursions?.map((item) => (
             <div key={item?.id} className="col-sm-6 col-md-4 mb-3">
-              <div className="card h-100">
+              <div className="card exc-card h-100">
                 <Image
                   src={item?.image}
                   className="card-img-top img-fluid"

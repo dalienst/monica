@@ -157,3 +157,54 @@ body {
   font-size: 1.5rem;
   color: var(--forestGreen);
 }
+
+/* Excursions */
+
+
+/* Card styling */
+.exc-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exc-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling */
+.card-img-top {
+  border-bottom: 3px solid var(--forestGreen);
+  /* Add color to the bottom border */
+  height: 200px;
+  /* Consistent height */
+  object-fit: cover;
+  /* Make sure images fit the area */
+}
+
+/* Card title */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--charcoalGrey);
+  margin: 1rem 0 0.5rem;
+  text-align: center;
+}
+
+/* Pricing section */
+.card-pricing {
+  font-size: 1rem;
+  color: var(--forestGreen);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    margin: 0 auto;
+  }
+}
