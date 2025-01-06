@@ -5,7 +5,7 @@ import React from "react";
 
 function Excursions() {
   return (
-    <section className="bg-white py-5" id="top-excursions">
+    <section className="py-5" id="top-excursions">
       <div className="text-center">
         <h5 className="fw-bold text-uppercase about-heading">
           Excursions & Safaris
