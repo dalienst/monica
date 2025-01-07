@@ -24,7 +24,7 @@ function Login() {
       toast.error("Invalid email or password");
     } else {
       toast.success("Login successful");
-      router.push("/dashboard");
+      router.push("/admin/dashboard");
     }
     setLoading(false);
   };
