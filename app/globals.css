@@ -261,3 +261,69 @@ body {
 .contact-item:hover a {
   color: var(--secondaryColor);
 }
+
+/* Auth screens */
+.auth-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  padding: 1rem;
+}
+
+.form {
+  max-width: 400px;
+  width: 100%;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.75rem;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.form-control {
+  border-radius: 0.375rem;
+  border-color: #ddd;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--dark-color);
+  box-shadow: 0 0 0 0.25rem rgba(28, 191, 242, 0.25);
+}
+
+.text-danger {
+  font-size: 0.875rem;
+}
+
+.text-center a {
+  color: var(--button-bg);
+  text-decoration: none;
+}
+
+.text-center a:hover {
+  text-decoration: underline;
+}
+
+.auth-btn {
+  background-color: var(--forestGreen);
+  color: var(--secondaryColor);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+}
+
+.auth-btn:hover {
+  background-color: var(--sunsetOrange);
+  color: #ddd;
+}

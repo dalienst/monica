@@ -6,6 +6,7 @@ import TanstackQueryProvider from "@/providers/TanstackQueryProvider";
 import React from "react";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
+import NextAuthProvider from "@/providers/NextAuthProvider";
 
 function RootLayout({ children }) {
   return (
@@ -19,7 +20,9 @@ function RootLayout({ children }) {
       </head>
       <body>
         <Toaster position="top-center" />
-        <TanstackQueryProvider>{children}</TanstackQueryProvider>
+        <NextAuthProvider>
+          <TanstackQueryProvider>{children}</TanstackQueryProvider>
+        </NextAuthProvider>
         <BootstrapClient />
       </body>
     </html>
