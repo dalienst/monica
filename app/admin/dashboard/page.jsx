@@ -15,7 +15,7 @@ function Dashboard() {
 
   if (isLoadingUser) return <LoadingSpinner />;
 
-  return <div>Dashboard</div>;
+  return <div className="container-fluid">Dashboard</div>;
 }
 
 export default Dashboard;
