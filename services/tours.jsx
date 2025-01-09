@@ -1,3 +1,4 @@
+"use client"
 import { apiMultipartActions } from "@/tools/api";
 
 export const createTour = async (formData, axios) => {

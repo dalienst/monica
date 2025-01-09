@@ -1,3 +1,4 @@
+"use client";
 import { getAllTours, getTours } from "@/services/tours";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosAuth from "../authentication/useAxiosAuth";
