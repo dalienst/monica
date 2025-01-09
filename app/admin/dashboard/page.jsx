@@ -1,9 +1,21 @@
-import React from 'react'
+"use client";
+import LoadingSpinner from "@/components/general/LoadingSpinner";
+import { useFetchProfile } from "@/hooks/accounts/actions";
+import React from "react";
 
 function Dashboard() {
-  return (
-    <div>Dashboard</div>
-  )
+  const {
+    isLoading: isLoadingUser,
+    data: user,
+    isError: isErrorUser,
+    refetch: refetchUser,
+  } = useFetchProfile();
+
+  console?.table(user);
+
+  if (isLoadingUser) return <LoadingSpinner />;
+
+  return <div>Dashboard</div>;
 }
 
-export default Dashboard
+export default Dashboard;
