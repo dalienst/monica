@@ -2,6 +2,7 @@
 import LoadingSpinner from "@/components/general/LoadingSpinner";
 import { useFetchProfile } from "@/hooks/accounts/actions";
 import { useFetchBookings } from "@/hooks/bookings/actions";
+import Link from "next/link";
 import React from "react";
 
 function Dashboard() {
@@ -17,11 +18,11 @@ function Dashboard() {
     data: bookings,
     isError: isErrorBookings,
     refetch: refetchBookings,
-  } = useFetchBookings()
+  } = useFetchBookings();
 
   console?.table(user);
 
-  if (isLoadingUser) return <LoadingSpinner />;
+  if (isLoadingUser || isLoadingBookings) return <LoadingSpinner />;
 
   return (
     <div className="container-fluid">
@@ -37,12 +38,12 @@ function Dashboard() {
           </div>
 
           <div className="col-md-4 col-sm-12 mb-3">
-            <div className="card h-100">
+            <Link href="/admin/tours" className="card h-100 text-decoration-none">
               <div className="card-body">
                 <h5 className="card-text">{user?.tours?.length}</h5>
                 <p className="card-text">Tour Packages</p>
               </div>
-            </div>
+            </Link>
           </div>
 
           <div className="col-md-4 col-sm-12 mb-3">

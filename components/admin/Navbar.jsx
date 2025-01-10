@@ -35,7 +35,7 @@ export default function Navbar() {
             </li>
 
             <li className="nav-item">
-              <Link href="/admin/dashboard" className="nav-link">
+              <Link href="/admin/tours" className="nav-link">
                 Tours
               </Link>
             </li>
