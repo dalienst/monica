@@ -1,4 +1,5 @@
 "use client";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -9,7 +10,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-md sticky-top border-bottom bg-white">
       <div className="container-fluid">
         <Link href="/" className="navbar-brand">
-          Monica Tours & Safaris
+          Admin Panel
         </Link>
 
         <button
@@ -28,27 +29,24 @@ export default function Navbar() {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link href="/" className="nav-link">
-                Home
+              <Link href="/admin/dashboard" className="nav-link">
+                Dashboard
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link href="/tours" className="nav-link">
+              <Link href="/admin/tours" className="nav-link">
                 Tours
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link href="/#about-us" className="nav-link">
-                About Us
-              </Link>
-            </li>
-
-            <li className="nav-item">
-              <Link href="/#contact" className="nav-link">
-                Contact
-              </Link>
+              <button
+                onClick={() => signOut()}
+                className="nav-link text-danger"
+              >
+                Sign Out
+              </button>
             </li>
           </ul>
         </div>

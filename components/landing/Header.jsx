@@ -10,7 +10,6 @@ function Header() {
       </div>
 
       <div>
-        {/* <h6>Tailored tours for unforgettable adventures.</h6> */}
         <h6>
           Explore stunning landscapes, encounter incredible wildlife, and create
           memories that will last a lifetime. Whether you're seeking adventure
@@ -20,10 +19,10 @@ function Header() {
       </div>
 
       <div>
-        <Link href="/" className="btn btn-primary me-3">
+        <Link href="/tours" className="btn btn-primary me-3">
           Explore Tours
         </Link>
-        <Link href="/" className="btn btn-secondary">
+        <Link href="/tours" className="btn btn-secondary">
           Book A Trip
         </Link>
       </div>
