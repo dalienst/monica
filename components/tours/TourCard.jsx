@@ -8,7 +8,7 @@ function TourCard({ tour }) {
     <div key={tour?.id} className="col-sm-6 col-md-4 mb-3">
       <Link
         className="card exc-card h-100 text-decoration-none"
-        href={`/tours/${tour?.slug}`}
+        href={`/tours/${tour?.reference}`}
       >
         {tour?.image ? (
           <Image

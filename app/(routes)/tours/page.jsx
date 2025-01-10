@@ -16,7 +16,11 @@ function Tours() {
 
   return (
     <>
-      <Header />
+      <Header
+        image="/van5.jpg"
+        title="Tours & Safaris"
+        desc="Explore the Wild Like Never Before!"
+      />
       <div className="container py-5">
         <div className="row mb-3">
           {tours?.map((tour) => (

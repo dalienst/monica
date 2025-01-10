@@ -10,7 +10,6 @@ function Header() {
       </div>
 
       <div>
-        {/* <h6>Tailored tours for unforgettable adventures.</h6> */}
         <h6>
           Explore stunning landscapes, encounter incredible wildlife, and create
           memories that will last a lifetime. Whether you're seeking adventure
