@@ -1,5 +1,6 @@
 "use client";
 import LoadingSpinner from "@/components/general/LoadingSpinner";
+import ToursTable from "@/components/tours/ToursTable";
 import AddTour from "@/forms/tours/AddTour";
 import { useFetchTours } from "@/hooks/tours/actions";
 import React, { useState } from "react";
@@ -7,6 +8,7 @@ import Modal from "react-bootstrap/Modal";
 
 function Tours() {
   const [show, setShow] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -17,7 +19,11 @@ function Tours() {
     refetch: refetchTours,
   } = useFetchTours();
 
-  console.table(tours)
+  console.table(tours);
+
+  const filteredTours = tours?.filter((tour) =>
+    tour?.title?.toLowerCase()?.includes(searchQuery.toLowerCase())
+  );
 
   if (isLoadingTours) return <LoadingSpinner />;
 
@@ -50,6 +56,22 @@ function Tours() {
             <AddTour refetch={refetchTours} closeModal={handleClose} />
           </div>
         </Modal>
+      </section>
+
+      <section className="mb-3 col-md-3">
+        <input
+          type="search"
+          name="search"
+          id="search"
+          className="form-control"
+          placeholder="Search Tours"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </section>
+
+      <section className="mb-3">
+        <ToursTable tours={filteredTours} />
       </section>
     </div>
   );
