@@ -64,9 +64,7 @@ body {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
-  /* Darken the image with black overlay */
   z-index: 1;
-  /* Position overlay behind text */
 }
 
 .header-bg h1,
@@ -326,4 +324,35 @@ label {
 .auth-btn:hover {
   background-color: var(--sunsetOrange);
   color: #ddd;
+}
+
+/* tours */
+
+.tour-bg {
+  background-image: url("/van5.jpg");
+  height: 66vh;
+  object-fit: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: var(--secondaryColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.tour-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
