@@ -1,12 +1,12 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import useAxiosAuth from "../useAxiosAuth";
 import {
   clientGetBookingDetail,
   getBookingDetail,
   getBookings,
 } from "@/services/bookings";
+import useAxiosAuth from "../authentication/useAxiosAuth";
 
 export function useFetchBookings() {
   const axios = useAxiosAuth();
