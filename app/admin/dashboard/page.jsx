@@ -20,7 +20,6 @@ function Dashboard() {
     refetch: refetchBookings,
   } = useFetchBookings();
 
-  console?.table(user);
 
   if (isLoadingUser || isLoadingBookings) return <LoadingSpinner />;
 

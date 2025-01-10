@@ -15,7 +15,6 @@ function TourDetail({ params }) {
     refetch: refetchTour,
   } = useFetchAllTourDetail(reference);
 
-  console.log(tour);
 
   if (isLoadingTour) return <LoadingSpinner />;
 

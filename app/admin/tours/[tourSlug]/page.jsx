@@ -110,7 +110,6 @@ function TourDetail({ params }) {
               toast.success("Tour updated successfully");
               refetchTour();
             } catch (error) {
-              console.log(error);
               toast.error("Error updating tour");
             } finally {
               setLoading(false);

@@ -19,7 +19,6 @@ function Tours() {
     refetch: refetchTours,
   } = useFetchTours();
 
-  console.table(tours);
 
   const filteredTours = tours?.filter((tour) =>
     tour?.title?.toLowerCase()?.includes(searchQuery.toLowerCase())
