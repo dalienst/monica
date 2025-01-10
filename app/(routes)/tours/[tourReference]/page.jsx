@@ -26,7 +26,7 @@ function TourDetail({ params }) {
         title={tour?.title}
         desc={tour?.description}
       />
-      <div className="container py-3 pb-5">
+      <div className="container py-5">
         <div className="row">
           {/* Tour Details Section */}
           <div className="col-md-8 col-sm-12 mb-3">
@@ -64,6 +64,11 @@ function TourDetail({ params }) {
 
           <div className="col-md-4 col-sm-12 mb-3">
             {/* add booking form */}
+            <div className="card h-100 p-4">
+              <section className="mb-3">
+                <h2 className="mb-3 text-primary">Book Now</h2>
+              </section>
+            </div>
           </div>
         </div>
       </div>
