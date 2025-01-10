@@ -20,46 +20,99 @@ function ClientBooking({ params }) {
   return (
     <>
       <div className="container py-5 min-vh-100">
-        <div className="card p-4">
-          <section className="mb-3 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
-            <div className="mb-3">
-              <h5 className="mb-3 text-success">Booking Detail</h5>
-              <h3>{booking?.name}</h3>
-              <p className="mb-0">{booking?.email}</p>
-              <p className="mb-0">{booking?.phone}</p>
-            </div>
-
-            <div>
-              <p className="mb-0">Ref: #{booking?.reference}</p>
-              <p className="mb-0">Status: {booking?.status}</p>
-              <p className="mb-0">
-                Booking Date: {extractDate(booking?.created_at)}
-              </p>
+        <div className="card shadow-lg border-0 p-4">
+          {/* Booking Details */}
+          <section className="mb-4">
+            <h5 className="text-success fw-bold mb-3">Booking Details</h5>
+            <div className="row">
+              <div className="col-md-6 mb-3">
+                <h3 className="fw-bold">{booking?.name}</h3>
+                <p className="text-muted mb-1">{booking?.email}</p>
+                <p className="text-muted mb-1">{booking?.phone}</p>
+              </div>
+              <div className="col-md-6 text-md-end">
+                <p className="mb-1">
+                  <strong>Ref:</strong> #{booking?.reference}
+                </p>
+                <p className="mb-1">
+                  <strong>Status:</strong>{" "}
+                  <span
+                    className={`badge ${
+                      booking?.status === "confirmed"
+                        ? "bg-success"
+                        : "bg-warning text-dark"
+                    }`}
+                  >
+                    {booking?.status}
+                  </span>
+                </p>
+                <p className="mb-1">
+                  <strong>Booking Date:</strong>{" "}
+                  {extractDate(booking?.created_at)}
+                </p>
+              </div>
             </div>
           </section>
           <hr />
-          <section className="mb-3 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
-            <div className="mb-3">
-              <h5 className="mb-3 text-success">Tour Detail</h5>
-              <h3>{booking?.tour_details?.title}</h3>
-              <p className="mb-0">Tour Date: {booking?.dategit }</p>
-              <p className="mb-0">Amount: {booking?.amount}</p>
-              <p className="mb-0">Days: {booking?.tour_details?.duration}</p>
-            </div>
 
-            <div>
-              <p className="mb-0">Currency: {booking?.currency}</p>
-              <p className="mb-0">Payment Status: {booking?.payment_status}</p>
-              <p className="mb-0">Payment Method: {booking?.payment_method}</p>
+          {/* Tour Details */}
+          <section className="mb-4">
+            <h5 className="text-success fw-bold mb-3">Tour Details</h5>
+            <div className="row">
+              <div className="col-md-6 mb-3">
+                <h3 className="fw-bold">{booking?.tour_details?.title}</h3>
+                <p className="text-muted mb-1">
+                  <strong>Tour Date:</strong> {booking?.date}
+                </p>
+                <p className="text-muted mb-1">
+                  <strong>Amount:</strong> {booking?.amount} {booking?.currency}
+                </p>
+                <p className="text-muted mb-1">
+                  <strong>Days:</strong> {booking?.tour_details?.duration}
+                </p>
+              </div>
+              <div className="col-md-6 text-md-end">
+                <p className="mb-1">
+                  <strong>Currency:</strong> {booking?.currency}
+                </p>
+                <p className="mb-1">
+                  <strong>Payment Status:</strong>{" "}
+                  <span
+                    className={`badge ${
+                      booking?.payment_status === "paid"
+                        ? "bg-success"
+                        : "bg-danger"
+                    }`}
+                  >
+                    {booking?.payment_status}
+                  </span>
+                </p>
+                <p className="mb-1">
+                  <strong>Payment Method:</strong> {booking?.payment_method}
+                </p>
+              </div>
             </div>
           </section>
+          <hr />
 
-          <section className="mb-3">
-            <h5 className="mb-3 text-success">Other Details</h5>
-            <p className="mb-0">{booking?.guests} Guests</p>
-            <p className="mb-0">
-              Require Jeep: {booking?.request_jeep === true ? "Yes" : "No"}
+          {/* Other Details */}
+          <section className="mb-4">
+            <h5 className="text-success fw-bold mb-3">Other Details</h5>
+            <p className="text-muted mb-1">
+              <strong>Guests:</strong> {booking?.guests}
             </p>
+            <p className="text-muted mb-1">
+              <strong>Require Jeep:</strong>{" "}
+              {booking?.request_jeep === true ? "Yes" : "No"}
+            </p>
+            {booking?.special_requests && (
+              <>
+                <p className="text-muted mb-1">
+                  <strong>Special Requests:</strong>
+                </p>
+                <p className="text-muted">{booking?.special_requests}</p>
+              </>
+            )}
           </section>
         </div>
       </div>
