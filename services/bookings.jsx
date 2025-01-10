@@ -1,8 +1,8 @@
 "use client";
 import { apiActions } from "@/tools/api";
 
-export const createBooking = async (values) => {
-  await apiActions?.post("/api/bookings/create/", values);
+export const createBooking = async (formData) => {
+  await apiActions?.post("/api/bookings/create/", formData);
 };
 
 export const updateBooking = async (slug, formData, axios) => {
