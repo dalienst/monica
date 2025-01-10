@@ -53,7 +53,7 @@ function AddTour({ refetch, closeModal }) {
           }
         }}
       >
-        {({ touched, setFieldValue, values }) => (
+        {({  setFieldValue, values }) => (
           <Form>
             <div className="form-group mb-3">
               <label htmlFor="image" className="form-label">

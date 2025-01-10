@@ -30,7 +30,7 @@ function ToursTable({ tours }) {
                   <td>{tour?.bookings?.length}</td>
                   <td>
                     <Link
-                      href={`admin/tours/${tour?.slug}`}
+                      href={`/admin/tours/${tour?.slug}`}
                       className="btn auth-btn btn-sm"
                     >
                       View

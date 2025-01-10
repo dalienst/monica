@@ -1,5 +1,10 @@
 "use client";
-import { getAllTours, getTours } from "@/services/tours";
+import {
+  getAllTourDetail,
+  getAllTours,
+  getTourDetail,
+  getTours,
+} from "@/services/tours";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosAuth from "../authentication/useAxiosAuth";
 
@@ -31,5 +36,6 @@ export function useFetchTourDetail(slug) {
   return useQuery({
     queryKey: ["tour", slug],
     queryFn: () => getTourDetail(slug, axios),
+    enabled: !!slug,
   });
 }
