@@ -29,7 +29,7 @@ function Tours() {
 
   return (
     <div className="container-fluid">
-      <section className="d-flex justify-content-between align-items-center mt-3 mb-3">
+      <section className="mb-3 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
         <div className="mb-1">
           <h3>Tour Packages</h3>
         </div>

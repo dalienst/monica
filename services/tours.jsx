@@ -19,6 +19,10 @@ export const updateTour = async (slug, formData, axios) => {
   await apiMultipartActions?.patch(`/api/tours/${slug}/`, formData, axios);
 };
 
+export const deleteTour = async (slug, axios) => {
+  await apiMultipartActions?.delete(`/api/tours/${slug}/`, axios);
+};
+
 // Public endpoints
 export const getAllTours = async () => {
   const response = await apiMultipartActions?.get("/api/tours/list/");

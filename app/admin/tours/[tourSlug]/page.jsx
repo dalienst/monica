@@ -2,10 +2,11 @@
 import LoadingSpinner from "@/components/general/LoadingSpinner";
 import useAxiosAuth from "@/hooks/authentication/useAxiosAuth";
 import { useFetchTourDetail } from "@/hooks/tours/actions";
-import { updateTour } from "@/services/tours";
+import { deleteTour, updateTour } from "@/services/tours";
 import { Field, Form, Formik } from "formik";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { use, useState } from "react";
 import toast from "react-hot-toast";
 
@@ -13,7 +14,10 @@ function TourDetail({ params }) {
   const tourSlug = use(params);
   const slug = tourSlug?.tourSlug;
   const axios = useAxiosAuth();
+  const router = useRouter();
+
   const [loading, setLoading] = useState(false);
+  const [deleting, setDeleting] = useState(false);
 
   const {
     isLoading: isLoadingTour,
@@ -21,6 +25,19 @@ function TourDetail({ params }) {
     isError: isErrorTour,
     refetch: refetchTour,
   } = useFetchTourDetail(slug);
+
+  const handleDelete = async () => {
+    setDeleting(true);
+    try {
+      await deleteTour(slug, axios);
+      router?.push("/admin/tours");
+      toast?.success("Tour deleted successfully");
+    } catch (error) {
+      toast?.error("Failed to delete tour");
+    } finally {
+      setDeleting(false);
+    }
+  };
 
   if (isLoadingTour) return <LoadingSpinner />;
 
@@ -36,13 +53,26 @@ function TourDetail({ params }) {
           </li>
         </ol>
       </nav>
-      <section className="d-flex justify-content-between align-items-center mt-3 mb-3">
-        <div>
+      <section className="mb-3 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
+        <div className="mb-3">
           <h3>{tour?.title}</h3>
         </div>
-        <button className="btn btn-sm btn-outline-danger">
-          <i className="bi bi-trash"></i>
-        </button>
+
+        <div className="mb-3 d-flex gap-2">
+          <button className="btn auth-btn btn-sm">View Bookings</button>
+          <button
+            className="btn btn-sm btn-outline-danger"
+            onClick={handleDelete}
+          >
+            {deleting ? (
+              <div className="spinner-border spinner-border-sm" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            ) : (
+              "Delete"
+            )}
+          </button>
+        </div>
       </section>
 
       <section className="mb-3">
@@ -128,7 +158,7 @@ function TourDetail({ params }) {
                   role="switch"
                   id="is_featured"
                   name="is_featured"
-                  checked={tour.is_featured}
+                  checked={tour?.is_featured}
                   onChange={(e) => {
                     setFieldValue("is_featured", e.target.checked);
                   }}
