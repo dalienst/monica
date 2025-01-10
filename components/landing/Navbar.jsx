@@ -34,6 +34,12 @@ export default function Navbar() {
             </li>
 
             <li className="nav-item">
+              <Link href="/tours" className="nav-link">
+                Tours
+              </Link>
+            </li>
+
+            <li className="nav-item">
               <Link href="/#about-us" className="nav-link">
                 About Us
               </Link>

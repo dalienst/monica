@@ -25,7 +25,7 @@ function Excursions({ tours }) {
         </div>
 
         <div className="text-center">
-          <Link href="/tours" className="btn action-btn rounded-pill btn-lg">
+          <Link href="/tours" className="btn action-btn rounded-pill btn-lg text-white fw-bold">
             Explore Tours
           </Link>
         </div>
