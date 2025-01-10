@@ -20,10 +20,10 @@ function Header() {
       </div>
 
       <div>
-        <Link href="/" className="btn btn-primary me-3">
+        <Link href="/tours" className="btn btn-primary me-3">
           Explore Tours
         </Link>
-        <Link href="/" className="btn btn-secondary">
+        <Link href="/tours" className="btn btn-secondary">
           Book A Trip
         </Link>
       </div>

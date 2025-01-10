@@ -71,7 +71,7 @@ function About() {
               magic of the wild. With Monica Tours & Safaris, every journey is a
               story waiting to be told.
             </p>
-            <Link href="/" className="btn action-btn rounded-pill btn-lg ">
+            <Link href="/tours" className="btn action-btn rounded-pill btn-lg ">
               Explore Tours
             </Link>
           </div>

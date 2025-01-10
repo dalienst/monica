@@ -29,6 +29,13 @@ export const getAllTours = async () => {
   return response?.data?.results || [];
 };
 
+export const getFeaturedTours = async () => {
+  const response = await apiMultipartActions?.get(
+    "/api/tours/list/?is_featured=true"
+  );
+  return response?.data?.results || [];
+};
+
 export const getAllTourDetail = async (reference) => {
   const response = await apiMultipartActions?.get(
     `/api/tours/detail/${reference}/`

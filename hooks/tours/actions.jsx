@@ -2,6 +2,7 @@
 import {
   getAllTourDetail,
   getAllTours,
+  getFeaturedTours,
   getTourDetail,
   getTours,
 } from "@/services/tours";
@@ -12,6 +13,13 @@ export function useFetchAllTours() {
   return useQuery({
     queryKey: ["tours"],
     queryFn: () => getAllTours(),
+  });
+}
+
+export function useFetchFeaturedTours() {
+  return useQuery({
+    queryKey: ["tours"],
+    queryFn: () => getFeaturedTours(),
   });
 }
 
