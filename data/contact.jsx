@@ -9,7 +9,7 @@ const faq = [
   {
     id: 2,
     question: "How can I contact Monica Tours & Safaris?",
-    answer: `You can contact Monica Tours & Safaris by email at monicahsafaris@gmail.com`,
+    answer: `You can contact Monica Tours & Safaris by email at monicadesh2015@gmail.com or by phone at +254 788 089205. You also visit our contact section for more information.`,
   },
   {
     id: 3,
@@ -26,34 +26,52 @@ const faq = [
 const contacts = [
   {
     id: 1,
-    title: "monicasafaris@gmail.com",
-    link: "mailto:monicasafaris@gmail.com",
+    title: "monicadesh2015@gmail.com",
+    link: "mailto:monicadesh2015@gmail.com",
     icon: <i className="bi bi-envelope me-2"></i>,
   },
   {
     id: 2,
-    title: "+1 (123) 456-7890",
-    link: "tel:+1 (123) 456-7890",
+    title: "+254 788 089205",
+    link: "tel:+254788089205",
     icon: <i className="bi bi-telephone me-2"></i>,
   },
   {
     id: 3,
-    title: "123 Main Street, City, Country",
-    link: "https://www.google.com/maps",
+    title: "Mombasa, Kenya",
+    link: "https://maps.app.goo.gl/SHcYNypjKyj3sAXx5",
     icon: <i className="bi bi-geo-alt me-2"></i>,
   },
-  {
-    id: 4,
-    title: "@monicasafaris",
-    link: "https://twitter.com/monicasafaris",
-    icon: <i className="bi bi-twitter me-2"></i>,
-  },
+  // {
+  //   id: 4,
+  //   title: "@monicasafaris",
+  //   link: "https://twitter.com/monicasafaris",
+  //   icon: <i className="bi bi-twitter me-2"></i>,
+  // },
   {
     id: 5,
-    title: "@monicasafaris",
-    link: "https://www.instagram.com/monicasafaris",
+    title: "@videshio",
+    link: "https://www.instagram.com/videshio?igsh=MTU1YTFyMnN0ZThlaQ==",
     icon: <i className="bi bi-instagram me-2"></i>,
   },
 ];
 
-export { faq, contacts };
+const paymentMethods = [
+  {
+    id: 1,
+    title: "Visa",
+    image: "/visa.png",
+  },
+  {
+    id: 2,
+    title: "Mastercard",
+    image: "/mastercard.png",
+  },
+  {
+    id: 3,
+    title: "PayPal",
+    image: "/paypal.png",
+  },
+];
+
+export { faq, contacts, paymentMethods };

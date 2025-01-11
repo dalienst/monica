@@ -20,7 +20,6 @@ function Dashboard() {
     refetch: refetchBookings,
   } = useFetchBookings();
 
-
   if (isLoadingUser || isLoadingBookings) return <LoadingSpinner />;
 
   return (
@@ -37,7 +36,10 @@ function Dashboard() {
           </div>
 
           <div className="col-md-4 col-sm-12 mb-3">
-            <Link href="/admin/tours" className="card h-100 text-decoration-none">
+            <Link
+              href="/admin/tours"
+              className="card h-100 text-decoration-none"
+            >
               <div className="card-body">
                 <h5 className="card-text">{user?.tours?.length}</h5>
                 <p className="card-text">Tour Packages</p>
@@ -46,12 +48,15 @@ function Dashboard() {
           </div>
 
           <div className="col-md-4 col-sm-12 mb-3">
-            <div className="card h-100">
+            <Link
+              href={"/admin/bookings"}
+              className="card h-100 text-decoration-none"
+            >
               <div className="card-body">
                 <h5 className="card-text">{bookings?.length}</h5>
                 <p className="card-text">Bookings</p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

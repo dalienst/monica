@@ -117,10 +117,10 @@ function CreateBooking({ tour, closeModal }) {
               </label>
               <Field name="payment_method" as="select" className="form-select">
                 <option value="">Select a payment method</option>
-                <option value="cash">Cash</option>
-                <option value="visa">Visa</option>
-                <option value="mastercard">Mastercard</option>
-                <option value="paypal">PayPal</option>
+                <option value="Cash">Cash</option>
+                <option value="Visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="PayPal">PayPal</option>
               </Field>
             </div>
 

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -9,7 +10,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-md sticky-top border-bottom bg-white">
       <div className="container-fluid">
         <Link href="/" className="navbar-brand">
-          Monica Tours & Safaris
+          <Image src="/monica1.png" alt="Monica Tours & Safaris" width={50} height={50} />
         </Link>
 
         <button

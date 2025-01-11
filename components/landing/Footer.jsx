@@ -1,4 +1,5 @@
-import { contacts } from "@/data/contact";
+import { contacts, paymentMethods } from "@/data/contact";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -8,12 +9,29 @@ function Footer() {
       <section className="container">
         <div className="row mb-3">
           <div className="col-md-4 col-sm-12 mb-3">
+            <Image
+              src="/logoblackNoBg.png"
+              alt="Monica Tours & Safaris"
+              width={100}
+              height={100}
+            />
             <h4>Monica Tours & Safari</h4>
             <p>
               Explore unforgettable adventures with Monica Tours & Safaris.
               Discover breathtaking destinations, customized excursions, and
               seamless booking experiences. Your journey starts here!
             </p>
+            <div className="mb-3 mt-3">
+              {paymentMethods?.map((method) => (
+                <Image
+                  src={method?.image}
+                  alt={method?.title}
+                  key={method?.id}
+                  width={48}
+                  height={48}
+                />
+              ))}
+            </div>
           </div>
 
           <div className="col-md-4 col-sm-12 mb-3">
