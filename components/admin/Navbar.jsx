@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-md sticky-top border-bottom bg-white">
       <div className="container-fluid">
-        <Link href="/" className="navbar-brand">
+        <Link href="/admin/dashboard" className="navbar-brand">
           Admin Panel
         </Link>
 
@@ -37,6 +37,12 @@ export default function Navbar() {
             <li className="nav-item">
               <Link href="/admin/tours" className="nav-link">
                 Tours
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link href="/admin/bookings" className="nav-link">
+                Bookings
               </Link>
             </li>
 
