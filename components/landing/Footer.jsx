@@ -9,6 +9,12 @@ function Footer() {
       <section className="container">
         <div className="row mb-3">
           <div className="col-md-4 col-sm-12 mb-3">
+            <Image
+              src="/logoblackNoBg.png"
+              alt="Monica Tours & Safaris"
+              width={100}
+              height={100}
+            />
             <h4>Monica Tours & Safari</h4>
             <p>
               Explore unforgettable adventures with Monica Tours & Safaris.
