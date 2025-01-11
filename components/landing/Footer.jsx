@@ -1,4 +1,5 @@
-import { contacts } from "@/data/contact";
+import { contacts, paymentMethods } from "@/data/contact";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -14,6 +15,17 @@ function Footer() {
               Discover breathtaking destinations, customized excursions, and
               seamless booking experiences. Your journey starts here!
             </p>
+            <div className="mb-3 mt-3">
+              {paymentMethods?.map((method) => (
+                <Image
+                  src={method?.image}
+                  alt={method?.title}
+                  key={method?.id}
+                  width={48}
+                  height={48}
+                />
+              ))}
+            </div>
           </div>
 
           <div className="col-md-4 col-sm-12 mb-3">

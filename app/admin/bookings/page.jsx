@@ -11,8 +11,6 @@ function Bookings() {
     refetch: refetchBookings,
   } = useFetchBookings();
 
-  console.table(bookings);
-
   if (isLoadingBookings) return <LoadingSpinner />;
 
   return (
