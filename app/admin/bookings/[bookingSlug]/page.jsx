@@ -1,12 +1,18 @@
 "use client";
 import LoadingSpinner from "@/components/general/LoadingSpinner";
+import UpdateBooking from "@/forms/bookings/UpdateBooking";
 import { useFetchBookingDetail } from "@/hooks/bookings/actions";
 import Link from "next/link";
-import React, { use } from "react";
+import React, { use, useState } from "react";
+import Modal from "react-bootstrap/Modal";
 
 function BookingDetail({ params }) {
   const bookingSlug = use(params);
   const slug = bookingSlug?.bookingSlug;
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const {
     isLoading: isLoadingBooking,
@@ -16,8 +22,6 @@ function BookingDetail({ params }) {
   } = useFetchBookingDetail(slug);
 
   if (isLoadingBooking) return <LoadingSpinner />;
-
-  console.log(booking)
 
   return (
     <>
@@ -36,14 +40,42 @@ function BookingDetail({ params }) {
 
         {/* Booking Information Section */}
         <div className="card shadow p-4">
-          <section className="mb-4 d-flex justify-content-between align-items-center">
+          <section className="mb-3 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
             <h3 className="text-primary">Booking Details</h3>
             {/* Update Button */}
-            <button className="btn btn-primary btn-sm">
+            <button className="btn btn-primary btn-sm" onClick={handleShow}>
               Update Booking
             </button>
+
+            <Modal
+              show={show}
+              onHide={handleClose}
+              dialogClassName="modal-dialog modal-dialog-scrollable modal-dialog-centered"
+            >
+              <div className="modal-header">
+                <h5 className="modal-title">
+                  Update Booking: {booking?.reference}
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={handleClose}
+                ></button>
+              </div>
+
+              <div className="modal-body">
+                <UpdateBooking
+                  booking={booking}
+                  slug={slug}
+                  refetch={refetchBooking}
+                  closeModal={handleClose}
+                />
+              </div>
+            </Modal>
           </section>
+
           <hr />
+
           <section className="mb-4">
             <div className="row">
               <div className="col-md-6">

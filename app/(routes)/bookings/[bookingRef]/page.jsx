@@ -40,7 +40,9 @@ function ClientBooking({ params }) {
                     className={`badge ${
                       booking?.status === "Confirmed"
                         ? "bg-success"
-                        : "bg-warning text-dark"
+                        : booking?.status === "Cancelled"
+                        ? "bg-danger"
+                        : "bg-warning"
                     }`}
                   >
                     {booking?.status}
@@ -81,6 +83,8 @@ function ClientBooking({ params }) {
                     className={`badge ${
                       booking?.payment_status === "Paid"
                         ? "bg-success"
+                        : booking?.payment_status === "Refunded"
+                        ? "bg-info"
                         : "bg-danger"
                     }`}
                   >
@@ -115,7 +119,9 @@ function ClientBooking({ params }) {
             )}
           </section>
 
-          <p className="mt-3 small fst-italic text-muted">*You can track your booking here</p>
+          <p className="mt-3 small fst-italic text-muted">
+            *You can track your booking here
+          </p>
         </div>
       </div>
     </>
