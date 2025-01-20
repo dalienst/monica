@@ -59,7 +59,7 @@ function TourDetail({ params }) {
         </div>
 
         <div className="mb-3 d-flex gap-2">
-          <button className="btn auth-btn btn-sm">View Bookings</button>
+          {/* <button className="btn auth-btn btn-sm">View Bookings</button> */}
           <button
             className="btn btn-sm btn-outline-danger"
             onClick={handleDelete}
