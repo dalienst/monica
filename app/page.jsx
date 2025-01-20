@@ -8,6 +8,7 @@ import React from "react";
 import Contact from "@/components/landing/Contact";
 import { useFetchFeaturedTours } from "@/hooks/tours/actions";
 import LoadingSpinner from "@/components/general/LoadingSpinner";
+import Link from "next/link";
 
 function LandingPage() {
   const {
@@ -26,6 +27,15 @@ function LandingPage() {
       <Excursions tours={tours} />
       <Contact />
       <Footer />
+
+      <Link
+        href="https://wa.me/254788089205"
+        className="whatsapp-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="bi bi-whatsapp"></i>
+      </Link>
     </>
   );
 }

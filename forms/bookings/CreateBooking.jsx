@@ -15,7 +15,8 @@ function CreateBooking({ tour, closeModal }) {
         email: "",
         phone: "",
         date: "",
-        guests: "",
+        adults: "",
+        kids: "",
         payment_method: "",
         currency: "",
         special_requests: "",
@@ -26,16 +27,17 @@ function CreateBooking({ tour, closeModal }) {
         try {
           const formData = new FormData();
 
-          formData.append("tour", values.tour);
-          formData.append("name", values.name);
-          formData.append("email", values.email);
-          formData.append("phone", values.phone);
-          formData.append("date", values.date);
-          formData.append("guests", values.guests);
-          formData.append("payment_method", values.payment_method);
-          formData.append("currency", values.currency);
-          formData.append("special_requests", values.special_requests);
-          formData.append("request_jeep", values.request_jeep);
+          formData?.append("tour", values?.tour);
+          formData?.append("name", values?.name);
+          formData?.append("email", values?.email);
+          formData?.append("phone", values?.phone);
+          formData?.append("date", values?.date);
+          formData?.append("adults", values?.adults);
+          formData?.append("kids", values?.kids);
+          formData?.append("payment_method", values?.payment_method);
+          formData?.append("currency", values?.currency);
+          formData?.append("special_requests", values?.special_requests);
+          formData?.append("request_jeep", values?.request_jeep);
 
           await createBooking(formData);
           toast.success("Booking created successfully. An email will be sent.");
@@ -99,19 +101,33 @@ function CreateBooking({ tour, closeModal }) {
           </div>
 
           <div className="row">
-            <div className="form-group mb-3 col-md-4 col-sm-12">
-              <label htmlFor="guests" className="form-label">
-                Number of guests
+            <div className="form-group mb-3 col-md-6 col-sm-12">
+              <label htmlFor="adults" className="form-label">
+                Number of adults
               </label>
               <Field
-                name="guests"
+                name="adults"
                 type="number"
                 className="form-control"
                 placeholder="2"
               />
             </div>
 
-            <div className="form-group mb-3 col-md-4 col-sm-12">
+            <div className="form-group mb-3 col-md-6 col-sm-12">
+              <label htmlFor="kids" className="form-label">
+                Number of kids
+              </label>
+              <Field
+                name="kids"
+                type="number"
+                className="form-control"
+                placeholder="2"
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="form-group mb-3 col-md-6 col-sm-12">
               <label htmlFor="payment_method" className="form-label">
                 Payment method
               </label>
@@ -124,7 +140,7 @@ function CreateBooking({ tour, closeModal }) {
               </Field>
             </div>
 
-            <div className="form-group mb-3 col-md-4 col-sm-12">
+            <div className="form-group mb-3 col-md-6 col-sm-12">
               <label htmlFor="currency" className="form-label">
                 Currency
               </label>

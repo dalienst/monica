@@ -61,7 +61,7 @@ function BookingsTable({ bookings }) {
         </div>
       ) : (
         <div className="alert alert-info">
-          <i className="bi bi-info-circle"></i> No Tours Found
+          <i className="bi bi-info-circle"></i> No Bookings Found
         </div>
       )}
     </>

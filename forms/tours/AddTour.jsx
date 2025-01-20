@@ -19,6 +19,7 @@ function AddTour({ refetch, closeModal }) {
           euro: "",
           pound: "",
           dollar: "",
+          discount: "",
           duration: "",
           capacity: "",
           is_featured: false,
@@ -28,18 +29,19 @@ function AddTour({ refetch, closeModal }) {
           try {
             const formData = new FormData();
 
-            if (values.image) {
-              formData.append("image", values.image);
+            if (values?.image) {
+              formData.append("image", values?.image);
             }
-            formData.append("title", values.title);
-            formData.append("description", values.description);
-            formData.append("ksh", values.ksh);
-            formData.append("euro", values.euro);
-            formData.append("pound", values.pound);
-            formData.append("dollar", values.dollar);
-            formData.append("duration", values.duration);
-            formData.append("capacity", values.capacity);
-            formData.append("is_featured", values.is_featured);
+            formData.append("title", values?.title);
+            formData.append("description", values?.description);
+            formData.append("ksh", values?.ksh);
+            formData.append("euro", values?.euro);
+            formData.append("pound", values?.pound);
+            formData.append("dollar", values?.dollar);
+            formData.append("discount", values?.discount);
+            formData.append("duration", values?.duration);
+            formData.append("capacity", values?.capacity);
+            formData.append("is_featured", values?.is_featured);
 
             await createTour(formData, axios);
             refetch();
@@ -53,7 +55,7 @@ function AddTour({ refetch, closeModal }) {
           }
         }}
       >
-        {({  setFieldValue, values }) => (
+        {({ setFieldValue, values }) => (
           <Form>
             <div className="form-group mb-3">
               <label htmlFor="image" className="form-label">
@@ -67,6 +69,23 @@ function AddTour({ refetch, closeModal }) {
                 }}
                 className="form-control"
               />
+            </div>
+
+            <div className="form-check form-switch mb-3">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="is_featured"
+                name="is_featured"
+                checked={values.is_featured}
+                onChange={(e) => {
+                  setFieldValue("is_featured", e.target.checked);
+                }}
+              />
+              <label htmlFor="is_featured" className="form-check-label">
+                Featured Tour
+              </label>
             </div>
 
             <div className="form-group mb-3">
@@ -138,6 +157,18 @@ function AddTour({ refetch, closeModal }) {
               </div>
             </div>
 
+            <div className="form-group mb-3">
+              <label htmlFor="discount" className="form-label">
+                Discount
+              </label>
+              <Field
+                name="discount"
+                type="number"
+                className="form-control "
+                placeholder="20"
+              />
+            </div>
+
             <div className="row">
               <div className="form-group mb-3 col-md-6 col-sm-12">
                 <label htmlFor="duration" className="form-label">
@@ -164,24 +195,7 @@ function AddTour({ refetch, closeModal }) {
               </div>
             </div>
 
-            <div className="form-check form-switch mb-3">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                role="switch"
-                id="is_featured"
-                name="is_featured"
-                checked={values.is_featured}
-                onChange={(e) => {
-                  setFieldValue("is_featured", e.target.checked);
-                }}
-              />
-              <label htmlFor="is_featured" className="form-check-label">
-                Featured Tour
-              </label>
-            </div>
-
-            <button 
+            <button
               type="submit"
               disabled={loading}
               className="btn auth-btn w-100"
