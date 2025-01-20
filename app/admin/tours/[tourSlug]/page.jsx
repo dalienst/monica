@@ -85,6 +85,7 @@ function TourDetail({ params }) {
             euro: tour?.euro || "",
             pound: tour?.pound || "",
             dollar: tour?.dollar || "",
+            discount: tour?.discount || "",
             duration: tour?.duration || "",
             capacity: tour?.capacity || "",
             is_featured: tour?.is_featured || false,
@@ -103,6 +104,7 @@ function TourDetail({ params }) {
               formData.append("pound", values.pound);
               formData.append("dollar", values.dollar);
               formData.append("duration", values.duration);
+              formData.append("discount", values.discount);
               formData.append("capacity", values.capacity);
               formData.append("is_featured", values.is_featured);
 
@@ -221,6 +223,18 @@ function TourDetail({ params }) {
                     placeholder={tour?.ksh || "200"}
                   />
                 </div>
+              </div>
+
+              <div className="form-group mb-3">
+                <label htmlFor="discount" className="form-label">
+                  Discount
+                </label>
+                <Field
+                  name="discount"
+                  type="number"
+                  className="form-control "
+                  placeholder="20"
+                />
               </div>
 
               <div className="row">

@@ -15,6 +15,7 @@ function ToursTable({ tours }) {
                 <th>€</th>
                 <th>$</th>
                 <th>£</th>
+                <th>Discount</th>
                 <th>Bookings</th>
                 <th>Actions</th>
               </tr>
@@ -27,6 +28,7 @@ function ToursTable({ tours }) {
                   <td>€{tour?.euro}</td>
                   <td>${tour?.dollar}</td>
                   <td>£{tour?.pound}</td>
+                  <td>{tour?.discount}%</td>
                   <td>{tour?.bookings?.length}</td>
                   <td>
                     <Link
