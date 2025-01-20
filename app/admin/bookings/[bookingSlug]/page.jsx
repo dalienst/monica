@@ -89,7 +89,10 @@ function BookingDetail({ params }) {
                   <strong>Phone:</strong> {booking?.phone}
                 </p>
                 <p>
-                  <strong>Guests:</strong> {booking?.guests}
+                  <strong>Adults:</strong> {booking?.adults}
+                </p>
+                <p>
+                  <strong>Kids:</strong> {booking?.kids}
                 </p>
                 <p>
                   <strong>Status:</strong> {booking?.status}

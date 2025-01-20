@@ -103,7 +103,10 @@ function ClientBooking({ params }) {
           <section className="mb-4">
             <h5 className="text-success fw-bold mb-3">Other Details</h5>
             <p className="text-muted mb-1">
-              <strong>Guests:</strong> {booking?.guests}
+              <strong>Adults:</strong> {booking?.adults}
+            </p>
+            <p className="text-muted mb-1">
+              <strong>Kids:</strong> {booking?.kids}
             </p>
             <p className="text-muted mb-1">
               <strong>Require Jeep:</strong>{" "}
