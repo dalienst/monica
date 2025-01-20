@@ -40,7 +40,7 @@ function Tours() {
         <Modal
           show={show}
           onHide={handleClose}
-          dialogClassName="modal-dialog modal-dialog-scrollable modal-dialog-centered"
+          dialogClassName="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
         >
           <div className="modal-header">
             <h5 className="modal-title">Add Tour Package</h5>
