@@ -43,7 +43,7 @@ function TourCard({ tour }) {
         <div className="card-body d-flex flex-column justify-content-between">
           <h5 className="card-title">{tour?.title}</h5>
           <p className="card-pricing">
-            ${tour?.dollar} | €{tour?.euro} | £{tour?.pound}
+            ${tour?.dollar} | €{tour?.euro}
           </p>
         </div>
       </Link>

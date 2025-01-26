@@ -148,8 +148,6 @@ function CreateBooking({ tour, closeModal }) {
                 <option value="">Select a currency</option>
                 <option value="DOLLAR">USD</option>
                 <option value="EURO">EUR</option>
-                <option value="POUND">Pound Sterling</option>
-                <option value="KSH">KSH</option>
               </Field>
             </div>
           </div>
